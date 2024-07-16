@@ -1,0 +1,13 @@
+version: "3.9"
+services:
+  app:
+    container_name: app_container
+    image: app.image
+    build:
+      context: ./
+      dockerfile: Dockerfile
+      args:
+        - MINHA_VARIAVEL=${MINHA_VARIAVEL}
+        - OUTRA_VARIAVEL=${OUTRA_VARIAVEL}        
+    env_file:
+      - .env
